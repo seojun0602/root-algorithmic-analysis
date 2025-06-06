@@ -60,10 +60,6 @@ This also serves as a learning tool to deepen understanding of both math and pro
   Solves `x^r = n` by updating:  
   `x = x - (x^r - n) / (r * x^(r - 1))`
 
-- **Binary Search Method**  
-  For `n ≥ 0`, searches for the square root within an interval `[low, high]`  
-  until the squared guess is sufficiently close to `n`.
-
 ### 3.2 Exponentiation (`pow`)
 
 - Integer powers are handled with fast exponentiation (`O(log n)`).
