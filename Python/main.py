@@ -1,9 +1,24 @@
 class Number: 
     def __init__(self, num):
         self._num = num
+        
     def abs(self):
         n = self._num
         return n if n>=0 else -n
+    
+    
+    def pow(self, power):
+        f = 1; b = self
+        if(self.abs()<1):
+            if(power == 0) return 0
+            p = (1/power).abs(); xz -= b
+            def re2lation(x):
+                return (x.pow(p)-b)/(p*(x.pow(p-1)))
+            while True:
+                xz-=(re2lation(xz));
+                if(re2lation(xz)>1e-15:
+                    break
+            return (xz) if (power>0) else (1/xz)
       
 class Array:
     def __init__(self, list_):
