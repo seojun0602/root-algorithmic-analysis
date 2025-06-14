@@ -14,42 +14,42 @@ class Number:
         return Number(n if n >= 0 else -n)
         
     # 매직 메서드 추가.
-    # 더하기
+    #  더하기
     def __add__(self, other):
         other = other._num if isinstance(other, Number) else other
         return Number(self._num + other)
         
-    # 빼기
+    #  빼기
     def __sub__(self, other):
         other = other._num if isinstance(other, Number) else other
         return Number(self._num - other)
         
-    # 곱하기
+    #  곱하기
     def __mul__(self, other):
         other = other._num if isinstance(other, Number) else other
         return Number(self._num * other)
         
-    # 나누기
+    #  나누기
     def __truediv__(self, other):
         other = other._num if isinstance(other, Number) else other
         return Number(self._num / other)
         
-    # less then
+    #  less then
     def __lt__(self, other):
         other = other._num if isinstance(other, Number) else other
         return self._num < other
         
-    # greater then
+    #  greater then
     def __gt__(self, other):
         other = other._num if isinstance(other, Number) else other
         return self._num > other
         
-    # equal
+    #  equal
     def __eq__(self, other):
         other = other._num if isinstance(other, Number) else other
         return self._num == other
         
-    # toString
+    #  toString
     def __str__(self):
         return str(self._num)
         
@@ -127,4 +127,43 @@ class Array:
             r = self._gcd(r, n)
 
         return Number(r if r >= 0 else -r)
+
+# PI
+# Reference: cafe.naver.com/nameyee/38284
+# lamda is insane
+π = (lambda: (
+    lambda stand: Number(1) / (stand * (
+        lambda: (
+            lambda recur: (
+                lambda acc, k: (
+                    (lambda loop:
+                        loop(loop, acc, k)
+                    )(lambda loop, acc, k:
+                        acc if recur(k).abs()._num < 1e-15 else loop(loop, acc + recur(k), k + 1)
+                    )
+                )
+            )(Number(0), 0)
+        )
+    )(lambda k:
+        Number(4 * k).fac() * (Number(1103) + Number(26390) * k) /
+        (Number(k).fac().pow(4) * Number(396).pow(4 * k))
+    ))
+)(Number(2) * Number(2).pow(0.5) / Number(9801)))()
+
+# 테일러 급수를 통한 삼각함수 계산.
+#  사인 함수
+def sints(r):
+    return "WIP"
+
+#  코사인 함수
+def costs(r):
+    return "WIP"
+
+#  아크탄젠트 함수
+def atan(x):
+    return "WIP"
+
+# 복소수의 극형식을 이용한 거듭제곱근 계산
+def rootCplx(cplxNum, index, mxdecp=3, frac=False):
+    return "WIP"
         
