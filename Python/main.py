@@ -1,7 +1,7 @@
 # root-algorithmic-analysis in py
 # Author: seojun0602
 
-#Number 클래스
+# Number 클래스
 class Number:
     def __init__(self, num):
         self._num = num
