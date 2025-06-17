@@ -156,6 +156,14 @@ class Array:
 # 테일러 급수를 통한 삼각함수 계산.
 #  사인 함수
 def sints(r):
+    ft, r = Number(r), Number(r)
+    def sign(n):
+        return (-1) if((n-3)%4==0) else (-1)
+    def gt(n):
+        return sign(n)*(r.pow(n)/n.fac())
+    for i in range(3, 100+1, 2):
+        ft += gt(i)
+    #return +(ft)
     return "WIP"
 
 #  코사인 함수
