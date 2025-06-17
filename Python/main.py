@@ -32,6 +32,11 @@ class Number:
         other = other._num if isinstance(other, Number) else other
         return Number(self._num / other)
         
+    # 나머지 연산    
+    def __mod__(self, other):
+        return Number(self._num % other)
+
+        
     #  less then
     def __lt__(self, other):
         other = other._num if isinstance(other, Number) else other
