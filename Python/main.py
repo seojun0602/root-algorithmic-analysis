@@ -134,6 +134,7 @@ class Array:
 # PI
 # Reference: cafe.naver.com/nameyee/38284
 # lamda is insane
+# 와중에 작동 안하네...
 π = (lambda: (
     lambda stand: Number(1) / (stand * (
         lambda: (
